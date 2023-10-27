@@ -65,7 +65,9 @@ STATIC_DIR = os.path.join(BASE_DIR, "static")
 MEDIA_DIR = os.path.join(BASE_DIR, "media")
 LOGS_DIR = os.path.join(BASE_DIR, "logs")
 ONLY_ADMIN = os.getenv('ONLY_ADMIN', 'off') == 'on'
-
+#CORS_ORIGIN_ALLOW_ALL = True
+#CORS_ALLOW_CREDENTIALS = True
+#CORS_ALLOW_ALL_ORIGINS = True 
 
 
 AWS_ACCESS_KEY_ID= os.getenv('AWS_ACCESS_KEY_ID')
@@ -202,6 +204,18 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+#database_url = os.environ.get('DATABASE_URL')
+DATABASES['default'] = dj_database_url.parse('postgres://keep_am_here_user:vXkPFacXcUG74lA9x7oiqk5RGNjjCOls@dpg-cjfse5hitvpc73dgi5h0-a.oregon-postgres.render.com/keep_am_here')
+
+#for render online database
+#postgres://keep_am_here_user:vXkPFacXcUG74lA9x7oiqk5RGNjjCOls@dpg-cjfse5hitvpc73dgi5h0-a/keep_am_here
+#DEFAULT_API_URL = os.getenv('DEFAULT_API_URL')
+
+#for local host
+#postgres://keep_am_here_user:vXkPFacXcUG74lA9x7oiqk5RGNjjCOls@dpg-cjfse5hitvpc73dgi5h0-a.oregon-postgres.render.com/keep_am_here
+
+# Password validation
+# https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
