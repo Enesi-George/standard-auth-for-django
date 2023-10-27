@@ -31,7 +31,7 @@ urlpatterns += [
     path('admin/', admin.site.urls),
     path('auth/', include('accounts.urls')),
     path('api/physical-storage/', include('physical_storage.urls')),
-    path('api/digital/', include('digital.urls')),
+    path('api/physical-form/', include('digital.urls')),
 
     re_path(
         r"^api/docs/$",
