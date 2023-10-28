@@ -4,6 +4,7 @@ from django.db import models
 class PhysicalStorage(models.Model):
     storage_type= models.CharField(max_length=255)
     storage_duration = models.IntegerField()
+    storage_space= models.CharField(max_length= 255)
     
 
     @property
