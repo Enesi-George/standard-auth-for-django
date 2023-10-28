@@ -15,3 +15,7 @@ class DimensionPriceAdmin(admin.ModelAdmin):
 @admin.register(PhyscialStorageForm)
 class CustomerFormAdmin(admin.ModelAdmin):
     list_display = [field.name for field in PhyscialStorageForm._meta.fields]     
+
+@admin.register(DimensionPriceAdmin)
+class CustomerFormAdmin(admin.ModelAdmin):
+    list_display = [field.name for field in PhyscialStorageForm._meta.fields]      
